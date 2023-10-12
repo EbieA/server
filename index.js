@@ -47,6 +47,10 @@ const storage=multer.diskStorage({
     }
 })
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the API"); // Or any other response
+  });
+
 const upload=multer({storage:storage})
 app.post("/api/upload",upload.single("file"),(req,res)=>{
     // console.log(req.body)
